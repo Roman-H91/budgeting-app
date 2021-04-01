@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budgeting App</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container-main">
+        <h1>Do I have enough money?</h1>
+        <div class="budget-monthly-costs">
+            <h3>Budget</h3>
+            <input id="budget" type="number" placeholder="amount">
+
+            <h3>Monthly Costs</h3>
+            <input id="rent" type="number" placeholder="rent">
+            <input id="utilities" type="number" placeholder="utilities">
+
+            <h3>Saving Priority</h3>
+            <input type="radio" name="Saving" value="High">
+            <label for="High">High</label>
+            <input type="radio" name="Saving" value="Medium" checked>
+            <label for="Medium">Medium</label> 
+            <input type="radio" name="Saving" value="Low">
+            <label for="Low">Low</label>
+        </div>
+
+        <div class="new-purchase">
+            <h3>New Purchase</h3>
+            <input id="descriptionPurchase" type="text" placeholder="description">
+            <input id="newPurchase" type="number" placeholder="price">
+        </div>
+
+        <div> 
+            <button onclick=count()>calculate</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
