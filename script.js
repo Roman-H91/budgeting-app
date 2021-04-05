@@ -1,18 +1,4 @@
-// let budget = 2500;
-// let savingPriority = "low";
-
-// let rent = 800;
-// let utilities = 200;
-// let newLaptop = 1200;
-
-// let totalCosts = rent + utilities;
-// let budgetLeft = budget - totalCosts;
-// let buyLaptop = budgetLeft >= newLaptop;
-
-// console.log("New Item Within Budget");
-// console.log(buyLaptop);
-// console.log("Postpone Purchase and Save Instead:");
-// console.log(savingPriority === "high");
+console.log("Percantage of saving: 'high' = 30%, 'medium' = 20%, 'low' = 10%");
 
 function count() {
     let budget = +document.getElementById("budget").value;
@@ -20,15 +6,28 @@ function count() {
     let utilities = +document.getElementById("utilities").value;
     let newPurchase = +document.getElementById("newPurchase").value;
     let descriptionPurchase = document.getElementById("descriptionPurchase").value;
+    let el = document.getElementsByName("saving");
 
     let totalCosts = rent + utilities;
     let budgetLeft = budget - totalCosts;
-    let budgetLeftAfterPurchase = budgetLeft - newPurchase;
-    let buyNewItem = budgetLeft >= newPurchase;
+    let budgetBeforeSaving = budgetLeft - newPurchase;
+    let budgetAfterSaving;
 
-    if (budgetLeftAfterPurchase > 0) {
-        alert("You have enough money to buy: " + descriptionPurchase + ". Savings after: " + budgetLeftAfterPurchase + "$");
+    for (let i = 0; i < el.length; i++) {
+        if (el[i].checked) {
+            if (el[i].value === "high") {
+                budgetAfterSaving = budgetBeforeSaving - (budgetBeforeSaving / 100 * 30);
+            } else if (el[i].value === "medium") {
+                budgetAfterSaving = budgetBeforeSaving - (budgetBeforeSaving / 100 * 20);
+            } else if (el[i].value === "low") {
+                budgetAfterSaving = budgetBeforeSaving - (budgetBeforeSaving / 100 * 10);
+            }
+        }
+    };
+
+    if (budgetAfterSaving > 0) {
+        alert("You have enough money to buy: " + descriptionPurchase + ". Savings after: " + budgetAfterSaving + "$");
     } else {
-        alert("You don't have enough money to buy: " + descriptionPurchase + ". Savings after: " + budgetLeftAfterPurchase + "$");
+        alert("You don't have enough money to buy: " + descriptionPurchase + ". Savings after: " + budgetAfterSaving + "$");
     };
 };

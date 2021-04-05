@@ -12,25 +12,25 @@
         <h1>Do I have enough money?</h1>
         <div class="budget-monthly-costs">
             <h3>Budget</h3>
-            <input id="budget" type="number" placeholder="amount">
+            <input id="budget" type="number" min="0" step="100" placeholder="amount">
 
             <h3>Monthly Costs</h3>
-            <input id="rent" type="number" placeholder="rent">
-            <input id="utilities" type="number" placeholder="utilities">
+            <input id="rent" type="number" min="0" step="100" placeholder="rent">
+            <input id="utilities" type="number" min="0" step="100" placeholder="utilities">
 
             <h3>Saving Priority</h3>
-            <input type="radio" name="Saving" value="High">
+            <input type="radio" name="saving" value="high">
             <label for="High">High</label>
-            <input type="radio" name="Saving" value="Medium" checked>
-            <label for="Medium">Medium</label> 
-            <input type="radio" name="Saving" value="Low">
+            <input type="radio" name="saving" value="medium" checked>
+            <label for="Medium">Medium</label>
+            <input type="radio" name="saving" value="low">
             <label for="Low">Low</label>
         </div>
 
         <div class="new-purchase">
             <h3>New Purchase</h3>
             <input id="descriptionPurchase" type="text" placeholder="description">
-            <input id="newPurchase" type="number" placeholder="price">
+            <input id="newPurchase" type="number" min="0" step="100" placeholder="price">
         </div>
 
         <div> 
