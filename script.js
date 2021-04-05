@@ -1,4 +1,4 @@
-console.log("Percantage of saving: 'high' = 30%, 'medium' = 20%, 'low' = 10%");
+console.log("Savings percentage: 'high' = 30%, 'medium' = 20%, 'low' = 10%");
 
 function count() {
     let budget = +document.getElementById("budget").value;
